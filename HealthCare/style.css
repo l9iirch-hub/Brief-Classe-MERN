@@ -63,7 +63,7 @@ input:focus {
   box-shadow: 0 0 5px rgba(39, 174, 96, 0.4);
 }
 
-/* الزر */
+
 button {
   grid-column: span 2;
   padding: 13px;
