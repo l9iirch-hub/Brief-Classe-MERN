@@ -6,34 +6,33 @@
 
 body {
   font-family: "Segoe UI", Tahoma, sans-serif;
-  background: #f4f6f9;
-  color: #333;
+  background: #f1f8f4; 
+  color: #2c3e50;
   padding: 30px;
 }
-#form-section h2{
-    text-align: center;
-}
+
 h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #2c3e50;
-}
+  color: #1e8449;}
 
-h2 {
-  margin-bottom: 15px;
-  color: #34495e;
+#form-section h2,
+#list-section h2 {
+  text-align: center;
+  color: #239b56;
+  margin-bottom: 20px;
 }
 
 section {
   background: #ffffff;
   padding: 25px;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #27ae60;
 }
-#list-section h2{
-    text-align: center;
-}
+
+
 form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -47,51 +46,56 @@ form div {
 
 label {
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  color: #1e8449;
 }
 
 input {
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  transition: border 0.3s;
+  border-radius: 6px;
+  border: 1px solid #bfc9ca;
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
 input:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: #27ae60;
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.4);
 }
 
+/* الزر */
 button {
   grid-column: span 2;
-  padding: 12px;
-  background: #3498db;
+  padding: 13px;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.3s;
 }
 
 button:hover {
-  background: #2980b9;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(39, 174, 96, 0.4);
 }
 
 #message {
   margin-top: 15px;
   font-weight: bold;
+  color: #1e8449;
 }
-
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 thead {
-  background: #3498db;
+  background: #27ae60;
   color: white;
 }
 
@@ -102,17 +106,18 @@ td {
 }
 
 tbody tr:nth-child(even) {
-  background: #f2f2f2;
+  background: #eafaf1;
 }
 
 tbody tr:hover {
-  background: #eaf2f8;
+  background: #d5f5e3;
 }
 
 td button {
   background: #e74c3c;
-  padding: 6px 10px;
+  padding: 6px 12px;
   font-size: 14px;
+  border-radius: 5px;
 }
 
 td button:hover {

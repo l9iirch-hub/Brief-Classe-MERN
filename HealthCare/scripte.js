@@ -1,8 +1,11 @@
+
 const form = document.getElementById("DemandeForm");
 const tablebody = document.getElementById("tableBody");
 const message = document.getElementById("message");
+
+
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
+  e.preventDefault();``
 
   const nom = document.getElementById("nom").value;
   const prenom = document.getElementById("prenom").value;
