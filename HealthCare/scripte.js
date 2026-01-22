@@ -1,11 +1,11 @@
-
 const form = document.getElementById("DemandeForm");
 const tablebody = document.getElementById("tableBody");
 const message = document.getElementById("message");
 
+let demandes = [];
 
 form.addEventListener("submit", function (e) {
-  e.preventDefault();``
+  e.preventDefault();
 
   const nom = document.getElementById("nom").value;
   const prenom = document.getElementById("prenom").value;
@@ -15,31 +15,50 @@ form.addEventListener("submit", function (e) {
   const date = document.getElementById("date").value;
 
   if (!nom || !prenom || !telephone || !email || !motif || !date) {
-    message.textContent = " Vous devez remplir toutes les cases  ";
-    message.style.color = "red";
+    showMessage(" Vous devez remplir toutes les cases  ", "red");
     return;
   }
 
+  const demande = {
+    nom,
+    prenom,
+    telephone,
+    email,
+    motif,
+    date
+  };
+
+  demandes.push(demande);
+
   const row = document.createElement("tr");
   row.innerHTML = `
-    <td>${nom}</td>
-    <td>${prenom}</td>
-    <td>${telephone}</td>
-    <td>${email}</td>
-    <td>${motif}</td>
-    <td>${date}</td>
+    <td>${demande.nom}</td>
+    <td>${demande.prenom}</td>
+    <td>${demande.telephone}</td>
+    <td>${demande.email}</td>
+    <td>${demande.motif}</td>
+    <td>${demande.date}</td>
     <td>
       <button onclick="deleteRow(this)"> Supprimer</button>
     </td>
   `;
+
   tablebody.appendChild(row);
 
-  message.textContent = " Commande ajoutée avec succès ";
-  message.style.color = "green";
+  showMessage(" Commande ajoutée avec succès ", "green");
   form.reset();
 });
+function showMessage(text, color) {
+  message.textContent = text;
+  message.style.color = color;
+
+  setTimeout(() => {
+    message.textContent = "";
+  }, 2560);
+}
+
 
 function deleteRow(button) {
   const row = button.parentElement.parentElement;
   row.remove();
-}
+};
