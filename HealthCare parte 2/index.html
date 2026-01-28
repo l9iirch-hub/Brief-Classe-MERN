@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,8 @@
     <title>HealthCare Programme</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="dark-theme">
+    <img src="img/darck.png" class="logo">
     <h1>Formulaire de Pré-admission</h1>
     <section id="form-section">
       <h2>Nouvelle Demande</h2>
@@ -46,6 +47,13 @@
     </section>
     <section id="list-section">
       <h2>Liste des demandes</h2>
+      <label for="site-search"></label>
+      <input placeholder="search ... " id="site-search" name="q" />
+      <button type="button" onclick="searchDemandes(siteSearch.value)">
+        Search
+      </button>
+
+      <ul id="demandList"></ul>
 
       <table border="1">
         <thead>

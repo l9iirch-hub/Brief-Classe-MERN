@@ -3,10 +3,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --primary-color: #edf2fc;
+  --secondary-color: #212121;
+  --anthour-color: #b8b8b8;
+}
+
+.dark-theme {
+  --primary-color: #1e1f23;
+  --secondary-color: #e8e8e8;
+  --anthour-color: #3b3e45;
+}
+
+.logo {
+  width: 30px;
+  cursor: pointer;
+}
 body {
   font-family: "Segoe UI", Tahoma, sans-serif;
-  background: #f1f8f4;
-  color: #2c3e50;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   padding: 30px;
 }
 h1 {
@@ -21,11 +37,11 @@ h1 {
   margin-bottom: 20px;
 }
 section {
-  background: #ffffff;
+  background: var(--primary-color);
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 30px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   border-left: 6px solid #47c26c;
 }
 form {
@@ -40,25 +56,30 @@ form div {
 label {
   font-weight: 500;
   margin-bottom: 6px;
-  color: #1e8449;
+  color: var(--secondary-color);
 }
 input {
-  padding: 17px;
-  border-radius: 6px;
-  border: 1px solid #bfc9ca;
-  transition: border 0.3s;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--anthour-color);
+  background: #f7f9fc;
+  color: var(--secondary-color);
+  transition: all 0.3s ease;
 }
-
+input::placeholder {
+  color: #9aa0a6;
+}
 input:focus {
   outline: none;
+  background: #ffffff;
   border-color: #27ae60;
-  box-shadow: 0 0 5px rgba(39, 174, 96, 0.4);
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.15);
 }
 button {
   grid-column: span 2;
   padding: 13px;
   background: linear-gradient(135deg, #2ecc71, #27ae60);
-  color: #fff;
+  color: var(--primary-color);
   border: none;
   border-radius: 8px;
   font-size: 16px;
@@ -78,7 +99,7 @@ table {
 }
 thead {
   background: #27ae60;
-  color: white;
+  color: var(--primary-color);
 }
 th,
 td {
@@ -91,7 +112,45 @@ td button {
   font-size: 14px;
   border-radius: 5px;
 }
-
 td button:hover {
   background: #c0392b;
+}
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  form {
+    grid-template-columns: 1fr;
+  }
+  button {
+    grid-column: span 1;
+  }
+  table {
+    font-size: 14px;
+  }
+  th,
+  td {
+    padding: 8px;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  input {
+    padding: 12px;
+    font-size: 14px;
+  }
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
